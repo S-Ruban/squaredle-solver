@@ -1,0 +1,42 @@
+body {
+    --text-on-primary-color: white;
+    --opposite-text-on-primary-color: black;
+    --primary: #b82828;
+    --primary-active: hsl(0, 64%, 48%);
+    --primary-hover: hsl(0, 64%, 40%);
+    --primary-half: rgba(184, 40, 40, 0.5);
+    --primary-shaded: hsl(0, 64%, 30%);
+    --secondary: hsl(180, 67%, 38%);
+    --secondary-active: hsl(180, 67%, 42%);
+    --secondary-hover: hsl(180, 67%, 34%);
+    min-height: 100%;
+    margin: 20;
+    color-scheme: dark;
+    --color: #e0e0e0;
+    --color-half: #707070;
+    --high-contrast: #fff;
+    --background-color: #000000;
+    --form-background-color: #383838;
+    --form-border-color: #b0b0b0;
+    --letter-background-color: #202020;
+    color: var(--color);
+    background-color: var(--background-color);
+  }
+
+  body, button {
+    font-family: RobotoWeb, Roboto, Arial, sans-serif;
+    font-size: 1em;
+  }
+
+body.light input[type="text"],
+body.light input[type="submit"]{
+    background-color: unset;
+    }
+
+a {
+    color:hsl(0, 64%, 48%)
+  }
+
+a.hover {
+    color:hsl(0, 64%, 30%)
+  }

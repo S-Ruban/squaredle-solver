@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="icon" href="../static/squaredle.ico" />
+  </head>
+  <title>Squaredle Solver</title>
+  <body>
+    <h1 align="center">Squaredle Solver</h1>
+    <div class="stuff" align="center">
+      <form action="/" method="post">
+        <input name="board" type="text" />
+        <input type="submit" value="Find words" />
+      </form>
+      <p>Words: {{words}}</p>
+    </div>
+    <div class="instr">
+      <h2>Instructions</h2>
+      <p>
+        Enter the letters on the board in left to right and top to bottom
+        fashion, and separate each row with a hyphen.
+      </p>
+      <p>
+        For example, if the board looks like this <br /><br />
+        <img width="200" height="200" src="../static/squaredle.jpg" />
+        <br /><br />
+        then the input should be as follows: <code>lteh-arld-epwu-toev</code>
+      </p>
+    </div>
+    <div class="info">
+      <h2>About</h2>
+      <p>
+        Squaredle is a word puzzle where you have to find words in a grid by
+        visiting each cell at most once. It's like crossword, but more flexible.
+      </p>
+      <p>
+        The grid is solved by using a
+        <a href="https://en.wikipedia.org/wiki/Trie" target="__blank">trie</a>
+        to store all the words in the English dictionary. Then, at every cell,
+        <a
+          href="https://en.wikipedia.org/wiki/Depth-first_search"
+          target="__blank"
+          >depth-first search (DFS) </a
+        >is performed on the neighbouring elements as long as they are within
+        bounds and not visited yet in that particular DFS call. With every DFS
+        call, the program keeps track of the letters added, and checks if the
+        current string is a prefix in the trie or not. Once it finds out that it
+        has reached the end of a particular word in the trie, it adds that word
+        to the list and continues. The English dictionary is
+        <code>import</code>ed from a Python package.
+      </p>
+      <p>
+        PS: It's very similar to
+        <a href="https://leetcode.com/problems/word-search-ii/" target="__blank"
+          >this Leetcode problem</a
+        >
+      </p>
+    </div>
+  </body>
+</html>
